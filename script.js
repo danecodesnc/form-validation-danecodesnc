@@ -9,26 +9,29 @@
 //if there's nothing in the field that we are looping through, add the input invalid class. 
 //the else statement is saying, if there's anything in the field, add the input valid class. 
 
-//Notes/psudocode from Brandon for part 2 of homework
+
 
 
 console.log('Add validation!');
 let parkingForm = document.querySelector("#parking-form")
-let fields = document.querySelectorAll(".field")
+let inputs = document.querySelectorAll(".input")
 parkingForm.addEventListener("submit", function(event) {
     event.preventDefault();
     console.log(event);
-    console.log(fields);
-    for (let field of fields) {
-        if (field.value === "") {
+    console.log(inputs);
+    for (let input of inputs) {
+        let inputField = input.closest(".input-field")
+        if (input.value === "") {
             console.log("invalid")
 
-            field.parentElement.classList.remove("input-valid")
-            field.parentElement.classList.add("input-invalid")
+            inputField.classList.remove("input-valid")
+            inputField.classList.add("input-invalid")
+            inputField.classList.add("required")
         } else {
 
-            field.parentElement.classList.remove("input-invalid")
-            field.parentElement.classList.add("input-valid")
+            inputField.classList.remove("input-invalid")
+            inputField.classList.add("input-valid")
+            inputField.classList.remove("required")
 
         }
     }
