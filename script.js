@@ -7,12 +7,13 @@ parkingForm.addEventListener("submit", function(e) {
     e.preventDefault();
     for (let input of fields) {
         console.log(input);
-        if (input.value) === "") {
-        console.log("Nothing here!")
-        input.parentElement.classList.add("input-invalid")
-    } else {
-        console.log("Stuff in there")
-        input.parentElement.classList.add("input-valid")
+        if (input.value === "") {
+            console.log("Nothing here!")
+            input.parentElement.classList.add("input-invalid")
+        } else {
+            console.log("Stuff in there")
+            input.parentElement.classList.add("input-valid")
+        }
     }
 }
 })
